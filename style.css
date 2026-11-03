@@ -1,0 +1,5447 @@
+:root {
+    --bg: #f7f9fd;
+    --paper: #ffffff;
+    --ink: #202b3c;
+    --muted: #65738a;
+    --blue: #5797e8;
+    --blue-dark: #2f67b2;
+    --blue-soft: #e5f0ff;
+    --line: #e0e8f4;
+    --peach: #f3d7c7;
+    --radius: 22px;
+    --shadow: 0 24px 60px rgba(44, 91, 155, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* Main page container */
+.page-shell {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    overflow: clip;
+    padding: 0 clamp(22px, 6.1vw, 100px);
+}
+
+/* Sticky header: full laptop width */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100vw;
+    height: 60px;
+    margin-left: calc(50% - 50vw);
+    padding: 0 clamp(28px, 6.1vw, 100px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(36, 57, 85, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    flex-shrink: 0;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.brand-mark {
+    width: 35px;
+    height: 35px;
+    border-radius: 12px;
+    background: var(--blue-soft);
+    color: var(--blue-dark);
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 1.8vw, 30px);
+    font-size: 12px;
+    font-weight: 600;
+    color: #53647d;
+    white-space: nowrap;
+}
+
+.nav-links > a {
+    transition: color 0.2s;
+}
+
+.nav-links > a:hover {
+    color: var(--blue-dark);
+}
+
+.nav-contact {
+    background: linear-gradient(110deg, #829bff, #58b8f5);
+    color: #10233e !important;
+    border-radius: 12px;
+    padding: 11px 17px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-contact svg {
+    width: 14px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--ink);
+}
+
+/* Hero section */
+.section {
+    padding: 105px 0;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 75px);
+    min-height: 680px;
+    padding-top: 55px;
+    padding-bottom: 75px;
+    position: relative;
+}
+
+.availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    border: 1px solid #d9e8ff;
+    background: #f5f9ff;
+    border-radius: 99px;
+    padding: 8px 12px;
+    color: var(--blue-dark);
+    margin-bottom: 27px;
+}
+
+.pulse,
+.tiny-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 4px var(--blue-soft);
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: var(--blue-dark);
+    margin: 0 0 18px;
+}
+
+.hero h1,
+.section-heading h2,
+.contact-copy h2 {
+    font-family: Manrope, sans-serif;
+    letter-spacing: -2.3px;
+    font-weight: 700;
+    line-height: 1.12;
+    margin: 0;
+}
+
+
+.hero-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+    margin: 0;
+    color: #151a2e;
+    max-width: 100%;
+}
+
+.name-gradient {
+    background: linear-gradient(
+        90deg,
+        #24466f 0%,
+        #4779bd 45%,
+        #8499ff 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.wave {
+    display: inline-block;
+    font-size: 0.65em;
+    letter-spacing: 0;
+}
+
+
+.accent-text {
+    color: var(--blue);
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 500px;
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin: 25px 0 28px;
+}
+
+/* Mengatur posisi tombol hero dan ikon sosial media */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 19px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(40, 93, 160, 0.10);
+}
+
+.button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.button-dark {
+    background: linear-gradient(110deg, #829bff, #58b8f5);
+    color: #10233e;
+}
+
+.button-light {
+    border: 1px solid var(--line);
+    background: #fff;
+}
+
+/* Tombol ikon LinkedIn dan GitHub */
+.social-icon-button {
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    background: #f8fafc;
+    border: 1px solid #dce3ec;
+    border-radius: 22px;
+    color: #344054;
+
+    box-shadow: 0 2px 4px rgba(30, 41, 59, 0.04);
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Ukuran SVG langsung, tidak bergantung pada Lucide */
+.social-icon-button svg {
+    display: block;
+    width: 29px;
+    height: 29px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.social-icon-button:hover {
+    transform: translateY(-2px);
+    background: #ffffff;
+    border-color: #b9c7d8;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 22px;
+    margin-top: 37px;
+    flex-wrap: wrap;
+}
+
+.hero-meta > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    color: #718099;
+}
+
+.meta-icon {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    background: var(--blue-soft);
+    color: var(--blue-dark);
+}
+
+.meta-icon svg {
+    width: 13px;
+}
+
+.hero-art {
+    height: 540px;
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+}
+
+
+/* Foto profil minimalis */
+.hero-photo-art {
+    height: 500px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-orbit {
+    position: absolute;
+    width: 82%;
+    height: 88%;
+    border: 1px solid #dce6f2;
+    border-radius: 48% 52% 50% 50%;
+    transform: rotate(-7deg);
+}
+
+.photo-frame {
+    position: relative;
+    z-index: 1;
+    width: 76%;
+    height: 120%;
+    padding: 9px;
+    border-radius: 28px;
+    background: #fff;
+    border: 1px solid #e3eaf3;
+    box-shadow: 0 16px 40px rgba(44, 65, 95, 0.08);
+}
+
+.hero-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 21px;
+}
+
+
+/* Ikon kecil di sekitar foto profil */
+.photo-float-icon {
+    position: absolute;
+    z-index: 2;
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    color: #547da9;
+    border: 1px solid #e2eaf4;
+    border-radius: 13px;
+    box-shadow: 0 5px 16px rgba(44, 65, 95, 0.07);
+
+    /* Animasi membesar dan mengecil */
+    transform-origin: center;
+    animation: iconPulse 2.2s ease-in-out infinite;
+}
+
+/* Ukuran ikon di dalam kotak */
+.photo-float-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.7;
+}
+
+/* Ikon chart di kiri atas */
+.icon-chart {
+    top: 0%;
+    left: 8%;
+    right: auto;
+    animation-delay: 0s;
+}
+
+/* Ikon code di kanan bawah */
+.icon-code {
+    bottom: 4%;
+    right: 8%;
+    animation-delay: 0.6s;
+}
+
+/* Efek membesar dan mengecil secara halus */
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.22);
+    }
+}
+
+/* Hormati pengaturan pengurangan animasi pengguna */
+@media (prefers-reduced-motion: reduce) {
+    .photo-float-icon {
+        animation: none;
+    }
+}
+
+
+
+.art-orbit {
+    position: absolute;
+    border: 1px solid #dce8f8;
+    border-radius: 50%;
+    transform: rotate(-24deg);
+}
+
+.orbit-one {
+    width: 470px;
+    height: 350px;
+}
+
+.orbit-two {
+    width: 390px;
+    height: 470px;
+    transform: rotate(35deg);
+}
+
+.dashboard-card {
+    width: min(100%, 405px);
+    position: relative;
+    z-index: 2;
+    border: 1px solid #e2eafa;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--shadow);
+    padding: 23px 24px 17px;
+    transform: rotate(-2deg);
+}
+
+.dash-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dash-overline {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #929fb2;
+    font-weight: 700;
+}
+
+.dash-top h3 {
+    font: 700 15px Manrope, sans-serif;
+    margin: 5px 0 0;
+}
+
+.dash-menu {
+    color: #a5b2c5;
+    letter-spacing: 3px;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0 14px;
+}
+
+.metric-label {
+    display: block;
+    color: #7e8ba0;
+    font-size: 10px;
+}
+
+.metric-row strong {
+    font: 800 34px Manrope, sans-serif;
+    letter-spacing: -1.5px;
+}
+
+.metric-note {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #4784cc;
+    font-size: 8px;
+    margin-top: 5px;
+}
+
+.metric-note svg {
+    width: 12px;
+}
+
+.mini-bars {
+    height: 60px;
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.mini-bars span {
+    width: 10px;
+    background: #d9e9fc;
+    border-radius: 4px 4px 0 0;
+}
+
+.mini-bars span:nth-child(4n + 2) {
+    background: #83b6ef;
+}
+
+.chart-area {
+    height: 125px;
+    display: flex;
+    border-bottom: 1px solid #edf2fa;
+    position: relative;
+}
+
+.chart-area:before,
+.chart-area:after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    right: 0;
+    border-top: 1px dashed #e2eaf6;
+    top: 25%;
+    z-index: 0;
+}
+
+.chart-area:after {
+    top: 60%;
+}
+
+.chart-y {
+    width: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    color: #a1aec0;
+    font-size: 8px;
+}
+
+.chart-area svg {
+    width: calc(100% - 26px);
+    height: 100%;
+    overflow: visible;
+}
+
+.dash-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    font-size: 8px;
+    color: #9ba8b9;
+}
+
+.dash-bottom span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #687a91;
+}
+
+.legend-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+}
+
+.floating-card {
+    position: absolute;
+    z-index: 3;
+    background: #fff;
+    border: 1px solid #e5edf8;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(38, 75, 125, 0.08);
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-label {
+    top: 48px;
+    left: 0;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transform: rotate(-5deg);
+}
+
+.card-label .tiny-dot {
+    width: 6px;
+    height: 6px;
+}
+
+.card-insight {
+    right: -6px;
+    bottom: 46px;
+    transform: rotate(3deg);
+}
+
+.insight-icon {
+    width: 33px;
+    height: 33px;
+    display: grid;
+    place-items: center;
+    background: var(--blue-soft);
+    border-radius: 10px;
+    color: var(--blue-dark);
+}
+
+.insight-icon svg {
+    width: 16px;
+}
+
+.card-insight b,
+.card-insight small {
+    display: block;
+}
+
+.card-insight b {
+    font: 700 11px Manrope;
+}
+
+.card-insight small {
+    font-size: 9px;
+    color: #8290a4;
+    margin-top: 2px;
+}
+
+.decor-star {
+    position: absolute;
+    color: #78a9e6;
+    font-size: 26px;
+}
+
+.star-a {
+    top: 92px;
+    right: 25px;
+}
+
+.star-b {
+    bottom: 45px;
+    left: 20px;
+    font-size: 18px;
+    color: #d4a98f;
+}
+
+.scroll-cue {
+    position: absolute;
+    bottom: 34px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+    color: #8593a8;
+}
+
+.scroll-line {
+    width: 36px;
+    height: 1px;
+    background: #9caec5;
+}
+
+/* Sections and cards */
+.section-heading {
+    margin-bottom: 42px;
+}
+
+.section-heading h2 {
+    font-size: clamp(32px, 4vw, 48px);
+}
+
+.muted-heading {
+    color: #a2b1c5;
+}
+
+.about-section {
+    border-top: 1px solid var(--line);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 100px;
+}
+
+.about-copy p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 2;
+    margin: 0 0 18px;
+}
+
+.about-copy strong {
+    color: #34445c;
+}
+
+.text-link {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+    border-bottom: 1px solid #9fbce0;
+    padding-bottom: 6px;
+}
+
+.text-link svg {
+    width: 14px;
+}
+
+.about-facts {
+    display: grid;
+    gap: 12px;
+}
+
+.fact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.fact-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: var(--blue-soft);
+    color: var(--blue-dark);
+    border-radius: 11px;
+}
+
+.fact-icon svg {
+    width: 18px;
+}
+
+.fact-card b {
+    font: 700 13px Manrope;
+}
+
+.fact-card p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.skills-section {
+    width: calc(100% + clamp(44px, 12.2vw, 200px));
+    margin-left: calc(-1 * clamp(22px, 6.1vw, 100px));
+    padding: 65px clamp(22px, 6.1vw, 100px) 75px;
+    background: #eaf2ff;
+    box-sizing: border-box;
+}
+
+/* Container Skills */
+.skills-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Heading */
+.skills-header {
+    width: 100%;
+    text-align: left;
+}
+
+
+.skills-header h2 {
+    margin: 0 0 24px;
+    color: #171c2f;
+    font-size: clamp(32px, 3.5vw, 44px);
+    font-weight: 750;
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+}
+
+.skills-header p {
+  max-width: 780px;
+  margin: 0;
+  color: #687892;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* GRID — dua kolom */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* CARD */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 25px 26px;
+  background: #ffffff;
+  border: 1px solid #e0e5ed;
+  border-radius: 22px;
+  box-shadow: 0 2px 5px rgba(25, 35, 55, 0.025);
+  box-sizing: border-box;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e7;
+  box-shadow: 0 8px 22px rgba(25, 35, 55, 0.06);
+}
+
+/* Judul setiap card */
+.skill-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  color: #1a2033;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.skill-card h3::before {
+  content: "";
+  flex: 0 0 9px;
+  width: 9px;
+  height: 9px;
+  background: #5268ff;
+  border-radius: 50%;
+}
+
+/* Deskripsi card */
+.skill-card p {
+  margin: 0 0 20px;
+  color: #7a89a3;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* Kumpulan badge tools */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+/* Badge individual */
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 39px;
+  padding: 8px 13px;
+  color: #46536d;
+  background: #ffffff;
+  border: 1px solid #e0e5ed;
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: #f7f8ff;
+  border-color: #cbd3ff;
+  transform: translateY(-1px);
+}
+
+/* Ikon di dalam badge */
+.skill-tag i,
+.skill-tag svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  color: #6274ff;
+  stroke-width: 2;
+}
+
+
+/* Logo merek asli pada Skills & Tools */
+.skill-tag img.brand-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    object-fit: contain;
+}
+
+/* Logo tetap proporsional pada layar kecil */
+@media (max-width: 600px) {
+    .skill-tag img.brand-icon {
+        width: 17px;
+        height: 17px;
+        flex-basis: 17px;
+    }
+}
+
+
+/* Warna ikon tambahan */
+.skill-tag .icon-green {
+  color: #53a17b;
+}
+
+.skill-tag .icon-orange {
+  color: #ed9b36;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .skills-section {
+    padding: 52px 22px 60px;
+  }
+
+  .skills-header {
+    margin-bottom: 30px;
+  }
+
+  .skills-grid {
+    gap: 16px;
+  }
+
+  .skill-card {
+    padding: 21px;
+    border-radius: 19px;
+  }
+
+  .skill-card h3 {
+    font-size: 15px;
+  }
+
+  .skill-card p {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .skill-tags {
+    gap: 8px;
+  }
+
+  .skill-tag {
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: 12px;
+    gap: 7px;
+    white-space: normal;
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .skills-section {
+    padding: 42px 18px 48px;
+  }
+
+  .skills-header {
+    margin-bottom: 24px;
+  }
+
+  .skills-header h2 {
+    font-size: 30px;
+    letter-spacing: -0.8px;
+  }
+
+  .skills-header p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .skills-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .skill-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .skill-card h3 {
+    font-size: 15px;
+  }
+
+  .skill-card p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .skill-tag {
+    min-height: 35px;
+    padding: 7px 10px;
+    font-size: 12px;
+    border-radius: 12px;
+  }
+}
+
+
+/* =====================================================
+   FEATURED PROJECTS
+   ===================================================== */
+
+.projects-section {
+    padding-top: 70px;
+    padding-bottom: 75px;
+    scroll-margin-top: 80px;
+}
+
+/* Header */
+.project-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 34px;
+}
+
+.project-heading-copy {
+    max-width: 720px;
+    min-width: 0;
+}
+
+.project-heading-copy .eyebrow {
+    margin-bottom: 12px;
+}
+
+.project-heading-copy h2 {
+    margin: 0 0 12px;
+    color: #171c2f;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(30px, 3vw, 38px);
+    font-weight: 800;
+    letter-spacing: -1.4px;
+    line-height: 1.2;
+}
+
+.project-heading-copy > p:last-child {
+    max-width: 690px;
+    margin: 0;
+    color: #536781;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.project-count {
+    flex-shrink: 0;
+    padding-bottom: 5px;
+    color: #718099;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.project-count strong {
+    color: #171c2f;
+    font-weight: 700;
+}
+
+/* Grid dua kolom */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 26px;
+}
+
+/* Card utama */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #dfe4ec;
+    border-radius: 22px;
+
+    box-shadow: 0 8px 25px rgba(31, 45, 70, 0.045);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Card project maju ke depan saat cursor diarahkan */
+.project-card {
+    position: relative;
+    transform: translateY(0) scale(1);
+    transform-origin: center center;
+    transition:
+        transform 0.35s cubic-bezier(.2, .7, .3, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Seluruh card membesar dan terangkat */
+.project-card:hover {
+    z-index: 5;
+    transform: translateY(-5px) scale(1.025);
+    border-color: #cbd8f5;
+    box-shadow: 0 18px 40px rgba(31, 45, 70, 0.14);
+}
+
+
+
+.project-image-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #edf2f8;
+
+    /* Tambahan untuk efek zoom */
+    border-radius: 0;
+    perspective: 800px;
+}
+
+
+
+.project-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    /* Gambar awal */
+    transform: scale(1);
+
+    /* Animasi zoom yang halus */
+    transition: transform 0.45s cubic-bezier(.2, .7, .3, 1);
+    will-change: transform;
+}
+
+
+
+/* Gambar dashboard terasa maju saat card terkena cursor */
+.project-card:hover .project-image {
+    transform: scale(1.07);
+}
+
+
+/* Overlay gambar saat hover */
+.project-image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    color: #ffffff;
+    background: rgba(19, 28, 48, 0.48);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-image-overlay svg {
+    width: 16px;
+    height: 16px;
+}
+
+.project-image-link:hover .project-image-overlay,
+.project-image-link:focus-visible .project-image-overlay {
+    opacity: 1;
+}
+
+/* Konten card */
+.project-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 23px 24px 20px;
+}
+
+.project-type {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    margin-bottom: 11px;
+    padding: 5px 10px;
+
+    color: #405fff;
+    background: #f1f5ff;
+    border: 1px solid #dce6ff;
+    border-radius: 7px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    line-height: 1.5;
+}
+
+.project-content h3 {
+    margin: 0 0 12px;
+    color: #171c2f;
+    font-family: Manrope, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.45px;
+    line-height: 1.45;
+}
+
+.project-content > p {
+    margin: 0 0 18px;
+    color: #596982;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+/* Badge tools */
+.project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+}
+
+
+/* Badge tools pada card project saja */
+.project-card .project-tools > span {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #edf0f5;
+    border-radius: 999px;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+
+/* Footer card */
+.project-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    min-height: 62px;
+    margin-top: auto;
+    padding: 12px 24px;
+
+    background: #ffffff;
+    border-top: 1px solid #edf0f5;
+}
+
+.project-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 34px;
+    padding: 8px 14px;
+
+    color: #ffffff;
+    background: #171c2f;
+    border: 1px solid #171c2f;
+    border-radius: 11px;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.4;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.project-primary-button:hover {
+    background: #34466c;
+    transform: translateY(-1px);
+}
+
+.project-primary-button svg {
+    width: 13px;
+    height: 13px;
+}
+
+.project-details-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+
+    color: #64748b;
+    font-size: 10px;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.project-details-link:hover {
+    color: #405fff;
+}
+
+.project-details-link svg {
+    width: 13px;
+    height: 13px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .projects-section {
+        padding-top: 55px;
+        padding-bottom: 60px;
+    }
+
+    .projects-grid {
+        gap: 18px;
+    }
+
+    .project-image-link {
+        height: 165px;
+    }
+
+    .project-content {
+        padding: 19px 18px 17px;
+    }
+
+    .project-content h3 {
+        font-size: 16px;
+    }
+
+    .project-footer {
+        padding: 12px 18px;
+    }
+}
+
+/* HP */
+@media (max-width: 600px) {
+    .projects-section {
+        padding-top: 42px;
+        padding-bottom: 48px;
+    }
+
+    .project-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .project-heading-copy h2 {
+        font-size: 29px;
+        letter-spacing: -0.8px;
+    }
+
+    .project-heading-copy > p:last-child {
+        font-size: 13px;
+    }
+
+    .project-count {
+        padding: 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .project-image-link {
+        height: 195px;
+    }
+
+    .project-content {
+        padding: 20px 18px 18px;
+    }
+
+    .project-content h3 {
+        font-size: 17px;
+    }
+
+    .project-content > p {
+        font-size: 12px;
+    }
+
+    .project-footer {
+        padding: 12px 18px;
+    }
+}
+
+/* Kurangi animasi bila diminta oleh pengaturan perangkat */
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-image,
+    .project-image-overlay,
+    .project-primary-button {
+        transition: none;
+    }
+
+    .project-card:hover,
+    .project-primary-button:hover {
+        transform: none;
+    }
+
+    .project-card:hover .project-image {
+        transform: none;
+    }
+}
+
+
+/* =====================================================
+   EXPERIENCE SECTION
+   ===================================================== */
+
+.experience-section {
+    padding: 45px 0 60px;
+    scroll-margin-top: 80px;
+    box-sizing: border-box;
+}
+
+/* HEADING */
+.experience-heading {
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.experience-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px;
+    margin-bottom: 12px;
+
+    background: #fff;
+    border: 1px solid #dfe5ee;
+    border-radius: 999px;
+
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.experience-heading h2 {
+    margin: 0 0 10px;
+    color: #171c2f;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(30px, 3.5vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.experience-heading > p {
+    max-width: 680px;
+    margin: 0;
+    color: #536781;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+/* =====================================================
+   TIMELINE
+   ===================================================== */
+
+.experience-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+
+    padding-left: 48px;
+}
+
+/* Card mengikuti lebar timeline */
+.experience-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px 26px;
+    border-radius: 20px;
+}
+
+.experience-timeline::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 0;
+    left: 18px;
+    width: 2px;
+    background: #dce5f2;
+}
+
+.experience-item {
+    position: relative;
+    min-width: 0;
+}
+
+/* Timeline marker */
+.experience-marker {
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: -38px;
+
+    width: 19px;
+    height: 19px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border: 4px solid #496cff;
+    border-radius: 50%;
+}
+
+/* =====================================================
+   EXPERIENCE CARD
+   ===================================================== */
+
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    padding: 20px 28px;
+    background: #fff;
+    border: 1px solid #dfe4ec;
+    border-radius: 21px;
+    box-shadow: 0 2px 5px rgba(31, 45, 70, .025);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-2px);
+    border-color: #cfd9e9;
+    box-shadow: 0 8px 24px rgba(31, 45, 70, .06);
+}
+
+/* =====================================================
+   CARD HEADER
+   ===================================================== */
+
+.experience-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.experience-header-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Category badge */
+.experience-category {
+    display: inline-flex;
+    align-items: center;
+
+    max-width: 100%;
+    margin-bottom: 9px;
+    padding: 5px 11px;
+    box-sizing: border-box;
+
+    background: #f1f5ff;
+    border: 1px solid #e5ecff;
+    border-radius: 8px;
+
+    color: #405fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .3px;
+    line-height: 1.5;
+}
+
+/* Job title */
+.experience-card-header h3 {
+    margin: 0 0 4px;
+
+    color: #171c2f;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(19px, 2vw, 23px);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -.5px;
+    overflow-wrap: anywhere;
+}
+
+/* Organization */
+.experience-organization {
+    margin: 0;
+    color: #3f4e67;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* Date badge */
+.experience-date {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 7px;
+
+    padding: 7px 11px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border: 1px solid #e1e7f0;
+    border-radius: 999px;
+
+    color: #475569;
+    font-size: 10px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.experience-date svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: #71839d;
+}
+
+/* =====================================================
+   EXPERIENCE DESCRIPTION
+   ===================================================== */
+
+.experience-description {
+    margin: 0;
+    color: #596982;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   KEY CONTRIBUTIONS
+   ===================================================== */
+
+.experience-contributions {
+    padding-top: 16px;
+    border-top: 1px solid #e8edf4;
+}
+
+.experience-contributions h4 {
+    margin: 0 0 11px;
+    color: #46536b;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: .3px;
+}
+
+/* Grid kompetensi: desktop */
+.experience-card .experience-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 500px));
+    align-items: stretch;
+    gap: 8px;
+
+    width: 100%;
+    max-width: 680px;
+}
+
+/* Skill item */
+.experience-card .experience-skill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 34px;
+    padding: 7px 10px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border: 1px solid #edf0f5;
+    border-radius: 10px;
+
+    color: #53627a;
+    font-size: 11px;
+    line-height: 1.4;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.experience-card .experience-skill:hover {
+    background: #f8faff;
+    border-color: #d7e2ff;
+}
+
+/* Skill icon */
+.experience-card .experience-skill svg {
+    display: block;
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: #496cff;
+}
+
+.experience-card .experience-skill span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   PROJECT HIGHLIGHT
+   ===================================================== */
+
+.experience-highlight {
+    padding: 14px 15px;
+    box-sizing: border-box;
+
+    background: #f3f8ff;
+    border: 1px solid #dceaff;
+    border-radius: 15px;
+}
+
+.experience-highlight h4 {
+    margin: 0 0 4px;
+    color: #294caa;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.experience-highlight p {
+    margin: 0;
+    color: #53627a;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .experience-section {
+        padding-top: 40px;
+        padding-bottom: 48px;
+    }
+
+    .experience-heading {
+        margin-bottom: 32px;
+    }
+
+    .experience-timeline {
+        padding-left: 39px;
+        gap: 25px;
+    }
+
+    .experience-timeline::before {
+        left: 14px;
+    }
+
+    .experience-marker {
+        left: -33px;
+        width: 17px;
+        height: 17px;
+        border-width: 3px;
+    }
+
+    .experience-card {
+        padding: 22px;
+        border-radius: 19px;
+        gap: 16px;
+    }
+
+    .experience-card-header {
+        gap: 12px;
+    }
+
+    .experience-card-header h3 {
+        font-size: 19px;
+    }
+
+    .experience-date {
+        font-size: 10px;
+    }
+
+    /* Tetap ringkas, tidak memenuhi lebar kartu */
+    .experience-card .experience-skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 220px));
+        max-width: 450px;
+    }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+    .experience-section {
+        padding: 35px 0 42px;
+        scroll-margin-top: 70px;
+    }
+
+    .experience-heading {
+        margin-bottom: 27px;
+    }
+
+    .experience-heading h2 {
+        font-size: 30px;
+        letter-spacing: -.7px;
+    }
+
+    .experience-heading > p {
+        font-size: 13px;
+    }
+
+    .experience-label {
+        padding: 5px 12px;
+        font-size: 10px;
+    }
+
+    .experience-timeline {
+        padding-left: 28px;
+        gap: 21px;
+    }
+
+    .experience-timeline::before {
+        left: 9px;
+    }
+
+    .experience-marker {
+        left: -25px;
+        width: 15px;
+        height: 15px;
+        border-width: 3px;
+    }
+
+    .experience-card {
+        padding: 17px;
+        border-radius: 16px;
+        gap: 15px;
+    }
+
+    .experience-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .experience-category {
+        font-size: 9px;
+    }
+
+    .experience-card-header h3 {
+        font-size: 17px;
+    }
+
+    .experience-organization {
+        font-size: 12px;
+    }
+
+    .experience-date {
+        max-width: 100%;
+        white-space: normal;
+        justify-content: flex-start;
+        font-size: 10px;
+    }
+
+    .experience-description {
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .experience-contributions {
+        padding-top: 14px;
+    }
+
+    .experience-contributions h4 {
+        font-size: 10px;
+    }
+
+    /* HP: satu kolom, lebar mengikuti kartu */
+    .experience-card .experience-skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 100%;
+        gap: 7px;
+    }
+
+    .experience-card .experience-skill {
+        min-height: 33px;
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+    .experience-highlight {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .experience-highlight h4 {
+        font-size: 11px;
+    }
+
+    .experience-highlight p {
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 380px) {
+    .experience-timeline {
+        padding-left: 24px;
+    }
+
+    .experience-timeline::before {
+        left: 7px;
+    }
+
+    .experience-marker {
+        left: -21px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .experience-card {
+        padding: 14px;
+    }
+
+    .experience-card-header h3 {
+        font-size: 16px;
+    }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .experience-card,
+    .experience-card .experience-skill {
+        transition: none;
+    }
+
+    .experience-card:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   EDUCATION SECTION
+   ========================================================= */
+
+.education-section {
+    padding-top: 30px;
+}
+
+.education-card {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 17px;
+}
+
+.education-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: var(--blue-soft);
+    color: var(--blue-dark);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.education-icon svg {
+    width: 23px;
+}
+
+.education-main {
+    flex: 1;
+}
+
+.education-main .eyebrow {
+    margin-bottom: 7px;
+    font-size: 8px;
+}
+
+.education-main h3 {
+    font: 700 14px Manrope;
+    margin: 0 0 4px;
+}
+
+.education-main > p:last-child {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 0;
+}
+
+.education-score {
+    border-left: 1px solid var(--line);
+    padding-left: 26px;
+}
+
+.education-score span {
+    display: block;
+    color: #8593a7;
+    font-size: 9px;
+}
+
+.education-score strong {
+    font: 800 22px Manrope;
+    color: var(--blue-dark);
+}
+
+.education-score strong span {
+    display: inline;
+    color: #9daabd;
+    font: 500 11px 'DM Sans';
+}
+
+.cert-row {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 12px;
+    padding: 17px 22px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.cert-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background: var(--blue-soft);
+    color: var(--blue-dark);
+    display: grid;
+    place-items: center;
+}
+
+.cert-icon svg {
+    width: 18px;
+}
+
+.cert-row b {
+    font: 700 12px Manrope;
+}
+
+.cert-row p {
+    font-size: 10px;
+    color: var(--muted);
+    margin: 3px 0 0;
+}
+
+.cert-label {
+    margin-left: auto;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #8b9ab0;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS SECTION
+   ========================================================= */
+
+/* Section utama */
+.certifications-section {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 65px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 85px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   1. HEADER CERTIFICATIONS
+   ========================================================= */
+
+.certifications-heading {
+    margin-bottom: 30px;
+}
+
+.certifications-heading .eyebrow {
+    margin-bottom: 12px;
+}
+
+.certifications-heading h2 {
+    margin: 0;
+    color: var(--ink, #171c2f);
+    font-family: Manrope, sans-serif;
+    font-size: clamp(30px, 3vw, 40px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+}
+
+.certifications-description {
+    margin: 10px 0 0;
+    color: var(--muted, #718099);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   2. GRID CARD
+   ========================================================= */
+
+.certifications-section .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   3. CARD SERTIFIKASI
+   ========================================================= */
+
+.certifications-section .certification-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+
+    width: 100%;
+    min-width: 0;
+    padding: 25px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #e0e5ed;
+    border-radius: 20px;
+    box-shadow: 0 3px 12px rgba(25, 35, 55, 0.025);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.certifications-section .certification-card:hover {
+    transform: translateY(-3px);
+    border-color: #cbd7ef;
+    box-shadow: 0 10px 25px rgba(35, 65, 110, 0.07);
+}
+
+/* =========================================================
+   4. BAGIAN INFORMASI SERTIFIKASI
+   ========================================================= */
+
+.certifications-section .certification-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    min-width: 0;
+}
+
+/* Mendukung card dengan ikon maupun tanpa ikon */
+.certifications-section .certification-web {
+    display: block;
+    width: 100%;
+}
+
+.certifications-section .certification-info {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+}
+
+/* Nama lembaga atau penyelenggara */
+.certifications-section .certification-issuer {
+    display: block;
+    margin: 2px 0 8px;
+
+    color: #78869d;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1.5;
+}
+
+/* Judul sertifikasi */
+.certifications-section .certification-info h3 {
+    margin: 0 0 20px;
+
+    color: var(--ink, #171c2f);
+    font-family: Manrope, sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: -0.45px;
+
+    overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   5. IKON SERTIFIKASI
+   Dipakai jika HTML masih menggunakan ikon
+   ========================================================= */
+
+.certifications-section .certification-web {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+}
+
+.certifications-section .certification-icon {
+    display: grid !important;
+    place-items: center;
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    box-sizing: border-box;
+    background: #f1f5ff;
+    color: #496cff;
+    border: 1px solid #e2eaff;
+    border-radius: 15px;
+}
+
+.certifications-section .certification-icon svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+    stroke-width: 1.9;
+}
+
+.certifications-section .certification-web .certification-info {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 600px) {
+    .certifications-section .certification-web {
+        gap: 12px;
+    }
+
+    .certifications-section .certification-icon {
+        flex-basis: 43px;
+        width: 43px;
+        height: 43px;
+        border-radius: 12px;
+    }
+
+    .certifications-section .certification-icon svg {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+/* =========================================================
+   6. BADGE KEAHLIAN
+   Contoh: HTML, CSS, JavaScript, PHP, SQL, Python
+   ========================================================= */
+
+.certifications-section .certification-skills {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    width: 100%;
+}
+
+/* Badge individual */
+.certifications-section .certification-skills span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 8px 14px;
+    box-sizing: border-box;
+
+    color: #64748b;
+    background: #ffffff;
+    border: 1px solid #dce4f0;
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.35;
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.certifications-section .certification-skills span:hover {
+    color: #496cff;
+    background: #f5f7ff;
+    border-color: #cbd5ff;
+}
+
+/* =========================================================
+   7. FOOTER CARD
+   ========================================================= */
+
+.certifications-section .certification-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    width: 100%;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #e8edf5;
+    box-sizing: border-box;
+}
+
+/* Kategori sertifikasi */
+.certifications-section .certification-type {
+    color: #8491a6;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+/* =========================================================
+   8. TOMBOL LIHAT DETAIL / CREDENTIAL
+   ========================================================= */
+
+.certifications-section .credential-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 10px 13px;
+    box-sizing: border-box;
+
+    color: #496cff;
+    background: #f2f6ff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.certifications-section .credential-link:hover {
+    background: #e8efff;
+    border-color: #d7e2ff;
+    transform: translateY(-1px);
+}
+
+.certifications-section .credential-link svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   9. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .certifications-section {
+        padding: 55px 0;
+    }
+
+    .certifications-section .certifications-grid {
+        gap: 16px;
+    }
+
+    .certifications-section .certification-card {
+        padding: 20px;
+        gap: 21px;
+    }
+
+    .certifications-section .certification-main {
+        gap: 12px;
+    }
+
+    .certifications-section .certification-info h3 {
+        font-size: 18px;
+        margin-bottom: 17px;
+    }
+
+    .certifications-section .certification-skills {
+        gap: 8px;
+    }
+
+    .certifications-section .certification-skills span {
+        min-height: 35px;
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+    .certifications-section .certification-icon {
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .certifications-section .certification-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* =========================================================
+   10. MOBILE / HP
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .certifications-section {
+        padding: 45px 0;
+        scroll-margin-top: 70px;
+    }
+
+    .certifications-heading {
+        margin-bottom: 24px;
+    }
+
+    .certifications-heading h2 {
+        font-size: 30px;
+        letter-spacing: -0.8px;
+    }
+
+    .certifications-description {
+        font-size: 13px;
+    }
+
+    /* Card menjadi satu kolom */
+    .certifications-section .certifications-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .certifications-section .certification-card {
+        padding: 19px;
+        gap: 18px;
+        border-radius: 16px;
+    }
+
+    .certifications-section .certification-info h3 {
+        font-size: 17px;
+        line-height: 1.45;
+        margin-bottom: 15px;
+    }
+
+    .certifications-section .certification-issuer {
+        font-size: 9px;
+    }
+
+    .certifications-section .certification-skills {
+        gap: 7px;
+    }
+
+    .certifications-section .certification-skills span {
+        min-height: 33px;
+        padding: 7px 10px;
+        border-radius: 9px;
+        font-size: 11px;
+    }
+
+    .certifications-section .certification-footer {
+        padding-top: 13px;
+        gap: 10px;
+    }
+
+    .certifications-section .certification-type {
+        font-size: 8px;
+    }
+
+    .certifications-section .credential-link {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   11. AKSESIBILITAS
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .certifications-section .certification-card,
+    .certifications-section .certification-skills span,
+    .certifications-section .credential-link {
+        transition: none;
+    }
+
+    .certifications-section .certification-card:hover,
+    .certifications-section .credential-link:hover {
+        transform: none;
+    }
+}
+
+/* Contact section */
+
+/* ==========================================
+   CONTACT SECTION
+   ========================================== */
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact-section {
+    width: 100%;
+    margin: 0;
+    padding: 60px 24px 70px;
+    background: #eef2f7;
+    font-family: "DM Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+.contact-section *,
+.contact-section *::before,
+.contact-section *::after {
+    box-sizing: border-box;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+.contact-header {
+    max-width: 650px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.contact-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 15px;
+    margin-bottom: 14px;
+    color: #405cff;
+    background: #ffffff;
+    border: 1px solid #dce2eb;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.contact-header h2 {
+    margin: 0 0 13px;
+    color: #151a2d;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.contact-header p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: #52647e;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* GRID KARTU */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* KARTU KONTAK */
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 220px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #dce1e9;
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(22, 32, 54, 0.05);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(22, 32, 54, 0.09);
+}
+
+/* KOTAK IKON — UKURAN SERAGAM */
+
+.contact-card .contact-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    min-height: 46px;
+    padding: 0;
+    margin: 0 0 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+/* WHATSAPP */
+
+
+.contact-card .contact-icon.whatsapp-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 17px;
+    border: 1px solid #d9f2e4;
+    border-radius: 15px;
+    background: #f0fbf5;
+    color: #369b6b;
+    overflow: hidden;
+}
+
+.contact-card .contact-icon.whatsapp-icon svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+    fill: currentColor;
+    stroke: none;
+    flex-shrink: 0;
+}
+
+
+/* Jika memakai Font Awesome untuk logo WhatsApp */
+
+.contact-card .contact-icon.whatsapp-icon .fa-whatsapp {
+    display: block;
+    font-size: 27px;
+    line-height: 1;
+}
+
+/* EMAIL */
+
+.contact-card .contact-icon.email-icon {
+    color: #5368ff;
+    background: #f1f5ff;
+    border-color: #dce5ff;
+}
+
+.contact-card .contact-icon.email-icon svg {
+    display: block;
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+}
+
+/* GITHUB */
+
+.contact-card .contact-icon.github-icon {
+    color: #171c30;
+    background: #f2f4f7;
+    border-color: #e0e4ea;
+}
+
+.contact-card .contact-icon.github-icon svg {
+    display: block;
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
+    min-height: 27px;
+    flex-shrink: 0;
+}
+
+/* LABEL */
+
+.contact-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #94a3bb;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+/* INFORMASI KONTAK */
+
+.contact-card h3 {
+    width: 100%;
+    margin: 0 0 15px;
+    color: #171c30;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* GARIS PEMISAH */
+
+.contact-divider {
+    width: 100%;
+    height: 1px;
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: 15px;
+    padding: 0;
+    background: #e2e8f0;
+}
+
+/* LINK */
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #171c30;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.contact-link:hover {
+    opacity: 0.7;
+}
+
+.contact-link svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.contact-card .whatsapp-link {
+    color: #369b6b;
+}
+
+.contact-card .email-link {
+    color: #5368ff;
+}
+
+.contact-card .github-link {
+    color: #171c30;
+}
+
+/* FOOTER KARTU EMAIL */
+
+.contact-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.copy-email {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    padding: 0;
+    color: #7c8ba3;
+    background: transparent;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                color 0.2s ease;
+}
+
+.copy-email:hover {
+    color: #405cff;
+    background: #f0f3f9;
+}
+
+.copy-email svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .contact-section {
+        padding: 50px 22px 55px;
+    }
+
+    .contact-container {
+        max-width: 760px;
+    }
+
+    .contact-header {
+        margin-bottom: 30px;
+    }
+
+    .contact-grid {
+        gap: 13px;
+    }
+
+    .contact-card {
+        min-height: 205px;
+        padding: 19px;
+        border-radius: 19px;
+    }
+
+    .contact-card h3 {
+        font-size: 14px;
+    }
+
+    .contact-link {
+        font-size: 11px;
+    }
+}
+
+/* HP */
+
+@media (max-width: 650px) {
+    .contact-section {
+        padding: 42px 18px 48px;
+    }
+
+    .contact-header {
+        margin-bottom: 26px;
+    }
+
+    .contact-badge {
+        padding: 6px 13px;
+        margin-bottom: 12px;
+        font-size: 11px;
+    }
+
+    .contact-header h2 {
+        margin-bottom: 11px;
+        font-size: clamp(30px, 8vw, 38px);
+        letter-spacing: -1px;
+    }
+
+    .contact-header p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .contact-card {
+        min-height: 180px;
+        padding: 21px;
+        border-radius: 18px;
+    }
+
+    .contact-card .contact-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        min-height: 46px;
+        margin-bottom: 13px;
+        border-radius: 15px;
+    }
+
+    .contact-card .contact-icon.whatsapp-icon svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .contact-card .contact-icon.github-icon svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .contact-label {
+        font-size: 10px;
+    }
+
+    .contact-card h3 {
+        font-size: 14px;
+    }
+
+    .contact-divider {
+        margin-bottom: 13px;
+    }
+
+    .contact-link {
+        font-size: 12px;
+    }
+}
+
+/* HP KECIL */
+
+@media (max-width: 380px) {
+    .contact-section {
+        padding: 35px 14px 42px;
+    }
+
+    .contact-header h2 {
+        font-size: 29px;
+    }
+
+    .contact-card {
+        padding: 18px;
+    }
+
+    .contact-card h3 {
+        font-size: 13px;
+    }
+}
+
+/* AKSESIBILITAS */
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-card,
+    .contact-link,
+    .copy-email {
+        transition: none;
+    }
+
+    .contact-card:hover {
+        transform: none;
+    }
+}
+
+.contact-icon
+/* Ukuran dan tampilan logo Contact */
+.contact-icon.whatsapp-icon,
+.contact-icon.github-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Logo WhatsApp */
+.contact-icon.whatsapp-icon {
+  color: #369b6b;
+  background: #f0fbf5;
+  border: 1px solid #d9f2e4;
+}
+
+.contact-icon.whatsapp-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Logo GitHub */
+.contact-icon.github-icon {
+  color: #171c30;
+  background: #f2f4f7;
+  border: 1px solid #e0e4ea;
+}
+
+.contact-icon.github-icon svg {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+.whatsapp-icon,
+
+
+
+.footer {
+    min-height: 85px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #909db0;
+    font-size: 9px;
+}
+
+.footer-brand {
+    color: var(--ink);
+    font-size: 12px;
+}
+
+.footer-brand .brand-mark {
+    width: 29px;
+    height: 29px;
+    font-size: 14px;
+    border-radius: 9px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1001;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 13px;
+    background: var(--blue-dark);
+    color: white;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 24px rgba(23, 54, 94, 0.18);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top svg {
+    width: 18px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .hero {
+        min-height: 720px;
+    }
+
+    .hero-photo-art {
+        transform: none;
+    }
+}
+
+/* Tablet and smaller laptops */
+@media (max-width: 1000px) {
+    .page-shell {
+        padding: 0 5%;
+    }
+
+    .topbar {
+        padding-inline: 5%;
+        gap: 18px;
+    }
+
+    .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: 24px;
+    min-height: auto;
+    }
+
+    .hero-name {
+    font-size: clamp(36px, 9vw, 52px);
+    letter-spacing: -1.5px;
+    }
+
+    .hero-photo-art {
+    width: 100%;
+    max-width: 420px;
+    height: 420px;
+    margin: 0 auto;
+    }
+
+    .photo-frame {
+        width: 86%;
+        height: 92%;
+    }
+
+    .photo-float-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 17px;
+    }
+
+    .photo-float-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .about-grid {
+        gap: 45px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-panel {
+        padding: 40px;
+        gap: 35px;
+    }
+
+    .nav-links {
+        gap: 14px;
+        font-size: 11px;
+    }
+}
+
+/* Mobile navigation */
+@media (max-width: 720px) {
+    .page-shell {
+        padding: 0 22px;
+    }
+
+    .topbar {
+        width: 100vw;
+        height: 72px;
+        margin-left: calc(50% - 50vw);
+        padding: 0 22px;
+    }
+
+    .menu-toggle {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+    }
+
+    .menu-toggle svg {
+        width: 19px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 63px;
+        left: 16px;
+        right: 16px;
+        padding: 16px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        white-space: normal;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links > a {
+        padding: 12px;
+    }
+
+    .nav-links .nav-contact {
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+    min-height: auto;
+    padding-top: 45px;
+    padding-bottom: 90px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 11vw, 62px);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-art {
+        height: 370px;
+        transform: scale(0.9);
+        transform-origin: top center;
+        margin: 0 -20px -30px;
+    }
+
+    .hero-photo-art {
+    height: 370px;
+    max-width: 360px;
+    margin: 0 auto;
+    }
+
+    .photo-float-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+    }
+
+    .photo-float-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dashboard-card {
+        max-width: 360px;
+    }
+
+    .card-label {
+        left: 4px;
+        top: 32px;
+    }
+
+    .card-insight {
+        right: 0;
+        bottom: 30px;
+    }
+
+    .orbit-one {
+        width: 380px;
+        height: 290px;
+    }
+
+    .orbit-two {
+        width: 310px;
+        height: 390px;
+    }
+
+    .scroll-cue {
+        bottom: 27px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 35px;
+        letter-spacing: -1.7px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .skills-section {
+        margin: 0 -22px;
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .skills-grid {
+        gap: 10px;
+    }
+
+    .skill-card {
+        padding: 17px 14px;
+        min-height: 245px;
+    }
+
+    .skill-card h3 {
+        font-size: 13px;
+    }
+
+    .skill-card p {
+        font-size: 10px;
+    }
+
+    .project-heading {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-visual {
+        height: 225px;
+    }
+
+    .project-content > p {
+        min-height: 0;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr 15px;
+        gap: 13px;
+        padding-bottom: 24px;
+    }
+
+    .timeline-date {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 8px;
+    }
+
+    .timeline-marker {
+        grid-column: 2;
+        grid-row: 1;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .timeline-item:not(:last-child):after {
+        left: auto;
+        right: 4px;
+        top: 15px;
+        bottom: -2px;
+    }
+
+    .timeline-body {
+        grid-column: 1 / 3;
+        padding-right: 25px;
+    }
+
+    .timeline-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .timeline-top h3 {
+        font-size: 14px;
+    }
+
+    .education-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .education-main {
+        min-width: calc(100% - 75px);
+    }
+
+    .education-main h3 {
+        font-size: 12px;
+    }
+
+    .education-score {
+        margin-left: 69px;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding: 12px 0 0;
+        width: 100%;
+    }
+
+    .cert-label {
+        display: none;
+    }
+
+    .contact-panel {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+        gap: 25px;
+    }
+
+    .contact-copy h2 {
+        font-size: 37px;
+        letter-spacing: -1.7px;
+    }
+
+    .contact-decoration {
+        font-size: 250px;
+        right: 0;
+        bottom: -100px;
+    }
+
+    .footer {
+        padding: 22px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer > span:nth-child(2) {
+        order: 3;
+    }
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .page-shell {
+        padding: 0 16px;
+    }
+
+    .topbar {
+        padding: 0 16px;
+    }
+
+    .hero-art {
+        transform: scale(0.78);
+        margin-left: -35px;
+        margin-right: -35px;
+        margin-bottom: -65px;
+    }
+
+    .skills-section {
+        margin: 0 -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .skill-tags span {
+        font-size: 8px;
+    }
+
+    .project-content {
+        padding: 19px;
+    }
+
+    .contact-panel {
+        padding: 28px 19px;
+    }
+
+    .hero-meta {
+        gap: 12px;
+    }
+}
+
+/* Respect reduced-motion accessibility preference */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   ABOUT ME — layout baru mengikuti referensi
+   Aturan ini sengaja diletakkan di akhir agar tidak perlu
+   menghapus CSS lama dan tidak mengubah bagian website lain.
+   ========================================================= */
+
+.about-section {
+    border-top: 1px solid var(--line);
+}
+
+.about-heading {
+    margin-bottom: 38px;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
+    align-items: start;
+    gap: clamp(32px, 4.2vw, 68px);
+}
+
+.about-main {
+    min-width: 0;
+}
+
+.about-copy p {
+    font-size: 14px;
+    line-height: 1.95;
+    color: var(--muted);
+    margin: 0 0 20px;
+}
+
+.about-copy strong {
+    color: var(--ink);
+}
+
+.about-copy .text-link {
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+/* Kartu Education di sebelah kanan */
+.education-panel {
+    min-width: 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.education-panel-head {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 25px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.education-panel-icon,
+.trait-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #dce6ff;
+    border-radius: 12px;
+    color: #7894ff;
+    background: #f5f7ff;
+}
+
+.education-panel-icon svg,
+.trait-icon svg {
+    width: 23px;
+    height: 23px;
+    stroke-width: 1.9;
+}
+
+.education-panel-head h3 {
+    margin: 0 0 3px;
+    font: 700 16px Manrope, sans-serif;
+}
+
+.education-panel-head p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.education-panel-body {
+    padding: 25px;
+}
+
+.education-panel-body h4 {
+    margin: 0 0 5px;
+    font: 800 20px Manrope, sans-serif;
+    letter-spacing: -0.4px;
+}
+
+.education-degree {
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Kartu IPK */
+.gpa-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px;
+    margin-bottom: 25px;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: #fff;
+}
+
+.gpa-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 76px;
+    min-height: 76px;
+    border-radius: 15px;
+    color: #142b50;
+    background: linear-gradient(145deg, #91a7ff, #65b8f3);
+}
+
+.gpa-score strong {
+    font: 800 25px Manrope, sans-serif;
+    line-height: 1.1;
+}
+
+.gpa-score span {
+    font-size: 10px;
+}
+
+.gpa-card b {
+    display: block;
+    font: 700 12px Manrope, sans-serif;
+}
+
+.gpa-card p {
+    margin: 6px 0 0;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* Daftar bidang/mata kuliah relevan */
+.coursework-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 13px;
+    font-size: 12px;
+}
+
+.coursework-heading svg {
+    width: 19px;
+    height: 19px;
+    color: #7894ff;
+}
+
+.coursework-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.coursework-tags span {
+    padding: 7px 11px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: #fff;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+/* Tiga kartu Mindset, Target Roles, Strengths */
+
+.about-traits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.trait-card {
+    min-width: 0;
+    min-height: 130px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(44, 65, 95, 0.04);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.trait-icon {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.trait-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.trait-card h3 {
+    font-size: 13px;
+    margin: 0 0 4px;
+}
+
+.trait-card p {
+    font-size: 11px;
+    margin: 0 0 5px;
+    line-height: 0;
+}
+
+.trait-card small {
+    font-size: 10px;
+    line-height: 1.1;
+}
+
+
+/* Penyesuaian untuk tablet */
+@media (max-width: 1000px) {S
+    .about-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+        gap: 28px;
+    }
+
+    .about-traits {
+        gap: 10px;
+    }
+
+    .trait-card {
+        padding: 17px 14px;
+    }
+}
+
+/* Penyesuaian untuk ponsel */
+@media (max-width: 720px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .about-copy p {
+        font-size: 13px;
+    }
+
+    .education-panel-body {
+        padding: 21px;
+    }
+
+    .about-traits {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .trait-card {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        column-gap: 13px;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .trait-icon {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+        margin: 0;
+    }
+
+    .trait-card h3,
+    .trait-card p,
+    .trait-card small {
+        grid-column: 2;
+    }
+
+    .trait-card h3 {
+        margin-bottom: 2px;
+    }
+
+    .gpa-card {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .gpa-score {
+        flex-basis: 68px;
+        min-height: 68px;
+    }
+}
+
+/* =========================================================
+   FINAL OVERRIDES — CERTIFICATIONS & CONTACT
+   Ukuran proporsional; mempertahankan logo, card, grid, badge.
+   Diletakkan paling akhir agar mengungguli aturan lama.
+   ========================================================= */
+
+/* ================= CERTIFICATIONS ================= */
+.certifications-section {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 48px;
+    padding-bottom: 52px;
+    scroll-margin-top: 75px;
+    box-sizing: border-box;
+}
+
+.certifications-section .certifications-heading {
+    margin-bottom: 25px;
+}
+
+.certifications-section .certifications-heading h2 {
+    font-size: clamp(30px, 2.7vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.9px;
+}
+
+.certifications-section .certifications-description {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.certifications-section .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+    width: 100%;
+}
+
+.certifications-section .certification-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 21px;
+    gap: 20px;
+    border-radius: 17px;
+    box-sizing: border-box;
+}
+
+.certifications-section .certification-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    min-width: 0;
+}
+
+/* Logo tetap terlihat untuk card yang memakai ikon */
+.certifications-section .certification-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+}
+
+.certifications-section .certification-icon svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.certifications-section .certification-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.certifications-section .certification-issuer {
+    display: block;
+    margin: 2px 0 8px;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.certifications-section .certification-info h3 {
+    margin: 0 0 16px;
+    font-size: 19px;
+    line-height: 1.45;
+    letter-spacing: -0.35px;
+    overflow-wrap: anywhere;
+}
+
+.certifications-section .certification-info p {
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.certifications-section .certification-skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.certifications-section .certification-skills span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 35px;
+    padding: 7px 12px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+.certifications-section .certification-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 13px;
+}
+
+.certifications-section .certification-type {
+    font-size: 9px;
+}
+
+.certifications-section .credential-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 12px;
+    border-radius: 9px;
+    font-size: 11px;
+}
+
+.certifications-section .credential-link svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+/* ================= CONTACT ================= */
+.contact-section {
+    width: 100%;
+    margin: 0;
+    padding: 48px 24px 52px;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.contact-badge {
+    padding: 6px 13px;
+    margin-bottom: 12px;
+    font-size: 11px;
+}
+
+.contact-header h2 {
+    margin: 0 0 11px;
+    font-size: clamp(30px, 3.2vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.contact-header p {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 190px;
+    padding: 21px;
+    border-radius: 18px;
+}
+
+.contact-card .contact-icon,
+.contact-card .contact-icon.whatsapp-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 43px;
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+    min-height: 43px;
+    margin: 0 0 14px;
+    border-radius: 13px;
+}
+
+.contact-card .contact-icon.email-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.contact-card .contact-icon.whatsapp-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-card .contact-icon.github-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-card .contact-icon.whatsapp-icon .fa-whatsapp {
+    font-size: 25px;
+}
+
+.contact-label {
+    margin-bottom: 4px;
+    font-size: 10px;
+}
+
+.contact-card h3 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.contact-divider {
+    margin-top: auto;
+    margin-bottom: 12px;
+}
+
+.contact-link {
+    gap: 6px;
+    font-size: 11px;
+}
+
+.contact-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+.contact-card-footer {
+    gap: 8px;
+}
+
+.copy-email {
+    width: 28px;
+    height: 28px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+    .certifications-section {
+        padding-top: 42px;
+        padding-bottom: 45px;
+    }
+
+    .certifications-section .certifications-grid {
+        gap: 14px;
+    }
+
+    .certifications-section .certification-card {
+        padding: 18px;
+        gap: 18px;
+    }
+
+    .certifications-section .certification-info h3 {
+        font-size: 17px;
+    }
+
+    .contact-section {
+        padding: 42px 22px 46px;
+    }
+
+    .contact-header {
+        margin-bottom: 25px;
+    }
+
+    .contact-grid {
+        gap: 12px;
+    }
+
+    .contact-card {
+        min-height: 180px;
+        padding: 17px;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 650px) {
+    .certifications-section {
+        padding-top: 36px;
+        padding-bottom: 40px;
+        scroll-margin-top: 65px;
+    }
+
+    .certifications-section .certifications-heading {
+        margin-bottom: 21px;
+    }
+
+    .certifications-section .certifications-heading h2 {
+        font-size: 29px;
+        letter-spacing: -0.7px;
+    }
+
+    .certifications-section .certifications-description {
+        font-size: 13px;
+    }
+
+    .certifications-section .certifications-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .certifications-section .certification-card {
+        padding: 18px;
+        gap: 17px;
+        border-radius: 15px;
+    }
+
+    .certifications-section .certification-main {
+        gap: 12px;
+    }
+
+    .certifications-section .certification-icon {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .certifications-section .certification-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .certifications-section .certification-info h3 {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+
+    .certifications-section .certification-skills {
+        gap: 7px;
+    }
+
+    .certifications-section .certification-skills span {
+        min-height: 32px;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .contact-section {
+        padding: 36px 18px 40px;
+    }
+
+    .contact-header {
+        margin-bottom: 23px;
+    }
+
+    .contact-header h2 {
+        font-size: clamp(28px, 7vw, 34px);
+        letter-spacing: -0.8px;
+    }
+
+    .contact-header p {
+        font-size: 12px;
+    }
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 11px;
+        max-width: 420px;
+    }
+
+    .contact-card {
+        min-height: 0;
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    .contact-card .contact-icon,
+    .contact-card .contact-icon.whatsapp-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+    }
+
+    .contact-card .contact-icon.whatsapp-icon svg,
+    .contact-card .contact-icon.github-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .contact-card h3 {
+        font-size: 13px;
+        margin-bottom: 11px;
+    }
+
+    .contact-link {
+        font-size: 11px;
+    }
+}
+
+/* ================= HP KECIL ================= */
+@media (max-width: 380px) {
+    .certifications-section .certification-card {
+        padding: 15px;
+    }
+
+    .certifications-section .certification-info h3 {
+        font-size: 15px;
+    }
+
+    .contact-section {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+}
+
+/* ================= AKSESIBILITAS ================= */
+@media (prefers-reduced-motion: reduce) {
+    .certifications-section .certification-card,
+    .certifications-section .credential-link,
+    .certifications-section .certification-skills span,
+    .contact-card,
+    .contact-link,
+    .copy-email {
+        transition: none;
+    }
+
+    .certifications-section .certification-card:hover,
+    .certifications-section .credential-link:hover,
+    .contact-card:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   PROJECT DETAIL MODAL
+========================================= */
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.project-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.project-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 41, 55, .48);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* POPUP DETAIL PROJECT — LEBAR SEPERTI CONTOH DASHBOARD */
+.project-modal-content {
+    position: relative;
+    z-index: 1;
+
+    width: calc(100vw - 64px);
+    max-width: 1440px;
+    max-height: calc(100vh - 48px);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding: 40px 48px;
+    box-sizing: border-box;
+
+    background: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, .8);
+    border-radius: 26px;
+
+    box-shadow: 0 24px 70px rgba(15, 23, 42, .2);
+
+    transform: translateY(12px) scale(.98);
+    transition: transform .25s ease;
+}
+
+/* Popup tampil normal ketika dibuka */
+.project-modal.is-open .project-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+.project-modal-content > h2 {
+    margin: 0 35px 23px 0;
+    color: #171c2f;
+    font-family: Manrope, sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -.6px;
+}
+
+.project-modal-close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    color: #718096;
+    background: transparent;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.project-modal-close:hover {
+    color: #171c2f;
+    background: #e9eef5;
+}
+
+.project-modal-close svg {
+    width: 19px;
+    height: 19px;
+}
+
+.project-modal-section {
+    margin-bottom: 21px;
+}
+
+.project-modal-section h4 {
+    margin: 0 0 9px;
+    color: #20283a;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.project-modal-box {
+    padding: 16px;
+    color: #596982;
+    background: #fff;
+    border: 1px solid #e7ebf1;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.project-modal-section .project-tools {
+    margin-top: 0;
+}
+
+.project-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 27px;
+}
+
+/* View Details sekarang berupa button */
+.project-details-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.project-details-link:focus-visible,
+.project-modal-close:focus-visible {
+    outline: 2px solid #496cff;
+    outline-offset: 4px;
+}
+
+.project-modal-footer .project-primary-button {
+    min-height: 36px;
+    padding: 9px 17px;
+    font-size: 11px;
+}
+
+
+@media (max-width: 600px) {
+    .project-modal {
+        padding: 12px;
+    }
+
+    .project-modal-content {
+        width: 100%;
+        max-width: none;
+        max-height: calc(100vh - 24px);
+        padding: 25px 18px;
+        border-radius: 18px;
+    }
+
+    .project-modal-content > h2 {
+        font-size: 20px;
+        overflow-wrap: anywhere;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .project-modal,
+    .project-modal-content {
+        transition: none;
+    }
+}
+
+
+
+/* =========================================
+   LOGO TOOLS PADA PROJECT DETAIL MODAL
+========================================= */
+
+.project-modal-section .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0;
+}
+
+
+
+/* BADGE TOOLS MODAL - LEBIH KECIL */
+.project-modal-section .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+}
+
+.project-modal-section .project-tool-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    min-height: 25px;
+    padding: 3px 8px;
+    box-sizing: border-box;
+
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #dfe5ef;
+    border-radius: 999px;
+
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.3;
+    white-space: nowrap;
+
+    box-shadow: none;
+    transform: none;
+}
+
+.project-modal-section .project-tool-badge:hover {
+    border-color: #cbd5e1;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Ukuran logo */
+.project-modal-section .project-tool-logo,
+.project-modal-section .project-tool-fallback {
+    display: block;
+    width: 13px;
+    height: 13px;
+    flex: 0 0 13px;
+    object-fit: contain;
+}
+
+
+
+/* =========================================
+   TOOLS BADGES - PROJECT DETAIL MODAL
+   Mengikuti tampilan Skills & Tools
+========================================= */
+
+.project-modal-section .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+}
+
+.project-tool-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 48px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+
+    color: #475569;
+    background: #ffffff;
+    border: 1.5px solid #dfe5ef;
+    border-radius: 999px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-tool-badge:hover {
+    border-color: #c5d3ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(73, 108, 255, 0.07);
+}
+
+/* Logo merek asli */
+.project-tool-logo {
+    display: block;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    object-fit: contain;
+}
+
+/* Ikon Lucide untuk tools umum */
+.project-tool-fallback {
+    display: block;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    color: #6878ff;
+    stroke-width: 1.8;
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    .project-modal-section .project-tools {
+        gap: 8px;
+    }
+
+    .project-tool-badge {
+        min-height: 40px;
+        padding: 8px 12px;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .project-tool-logo,
+    .project-tool-fallback {
+        display: block;
+        width: 12px;
+        height: 12px;
+        flex: 0 0 12px;
+        object-fit: contain;
+    }
+
+    .project-tool-fallback {
+        color: #6878ff;
+        stroke-width: 1.8;
+    }
+}
+
+
+/* =========================================
+   PROJECT CARD TOOL LOGOS
+========================================= */
+
+.projects-grid .project-card .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.projects-grid .project-card .project-tools > span.project-tool-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 5px 9px;
+    min-height: 27px;
+    box-sizing: border-box;
+
+    background: #fff;
+    color: #475569;
+    border: 1px solid #e8edf4;
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* Logo merek */
+.projects-grid .project-card .project-card-tool-logo {
+    display: block;
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    object-fit: contain;
+}
+
+/* Ikon tools yang bukan merek */
+.projects-grid .project-card .project-card-tool-fallback {
+    display: block;
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    color: #6478ff;
+    stroke-width: 1.8;
+}
+
+/* Cegah teks bagian dalam membentuk kapsul kedua */
+.projects-grid .project-card .project-tools
+> span.project-tool-chip > span.project-card-tool-label {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Hover ringan */
+.projects-grid .project-card .project-tools
+> span.project-tool-chip:hover {
+    border-color: #cbd8ff;
+}
+
+/* Tampilan mobile */
+@media (max-width: 600px) {
+    .projects-grid .project-card .project-tools > span.project-tool-chip {
+        min-height: 25px;
+        padding: 4px 8px;
+        gap: 4px;
+        font-size: 9px;
+    }
+
+    .projects-grid .project-card .project-card-tool-logo {
+        width: 13px;
+        height: 13px;
+        flex-basis: 13px;
+    }
+}
+
+
+/* ========================================
+   PROJECT DETAIL DASHBOARD
+======================================== */
+
+.project-modal-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 22px 0;
+}
+
+.project-modal-section {
+    min-width: 0;
+    margin-bottom: 22px;
+}
+
+.project-modal-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 13px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #20263a;
+}
+
+.project-modal-section h3 svg {
+    width: 17px;
+    height: 17px;
+    color: #6178ff;
+}
+
+.project-feature-list {
+    display: grid;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.project-feature-list li {
+    position: relative;
+    padding-left: 23px;
+    color: #52617a;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.project-feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #6c9cff;
+    border-radius: 50%;
+    color: #4c83ff;
+    font-size: 10px;
+}
+
+.project-detail-box {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+}
+
+.project-detail-box p {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Bingkai dashboard */
+.project-preview-window {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e7f0;
+    border-radius: 12px;
+}
+
+.project-preview-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 34px;
+    padding: 0 12px;
+    border-bottom: 1px solid #e7ebf2;
+}
+
+.project-preview-toolbar > span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ef6a79;
+}
+
+.project-preview-toolbar > span:nth-child(2) {
+    background: #f5bb49;
+}
+
+.project-preview-toolbar > span:nth-child(3) {
+    background: #69c59a;
+}
+
+.project-preview-toolbar small {
+    margin-left: 8px;
+    color: #718096;
+    font-size: 10px;
+}
+
+/* Placeholder gambar */
+.project-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+    min-height: 130px;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    background: #f0f4fa;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    color: #8291a8;
+}
+
+.project-image-placeholder svg {
+    width: 25px;
+    height: 25px;
+}
+
+.project-image-placeholder p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.project-image-placeholder small {
+    font-size: 10px;
+}
+
+.project-main-image {
+    min-height: 300px;
+    border: 0;
+    border-radius: 0;
+}
+
+.project-chart-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.project-chart-gallery .project-image-placeholder {
+    aspect-ratio: 4 / 3;
+    min-height: 100px;
+    background: #fff;
+}
+
+@media (max-width: 650px) {
+    .project-modal-columns {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .project-main-image {
+        min-height: 190px;
+    }
+
+    .project-chart-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+}
+
+
+/* Gambar preview dashboard mengikuti proyek yang sedang dibuka */
+.project-dashboard-image {
+    display: block;
+    width: 100%;
+    max-height: 520px;
+    min-height: 180px;
+    object-fit: contain;
+    object-position: center;
+    background: #fff;
+}
+
+.project-dashboard-image[style*="display: none"] {
+    display: none !important;
+}
+
+.project-chart-gallery .project-image-placeholder {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 650px) {
+    .project-dashboard-image {
+        min-height: 140px;
+        max-height: 320px;
+    }
+}
+
+
+
+/* ========================================
+   PROJECT OVERVIEW & ARCHITECTURE
+======================================== */
+
+.project-overview-card,
+.project-architecture-section {
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #e5ebf4;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(40, 60, 95, 0.04);
+}
+
+.project-section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.project-section-title h3 {
+    margin: 0;
+    color: #202b3c;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.project-section-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    color: #6480ff;
+    background: #edf3ff;
+    border-radius: 50%;
+}
+
+.project-section-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+
+#modalProjectOverview {
+    margin: 0 0 14px;
+    color: #65738a;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    font-weight: 400;
+}
+
+
+
+/* Project Overview checklist */
+.project-overview-list {
+    display: grid;
+    gap: 8px;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-overview-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #65738a;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.project-check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 17px;
+    width: 17px;
+    height: 17px;
+    margin-top: 1px;
+    color: #6480ff;
+    background: #f0f4ff;
+    border: 1px solid #dce5ff;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.project-check-icon svg {
+    width: 12px;
+    height: 12px;
+    stroke-width: 3;
+}
+
+.project-architecture-section {
+    width: 100%;
+    max-width: 960px;
+    margin: 16px auto;
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid #edf1f7;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(40, 60, 95, 0.035);
+}
+
+.project-architecture-section .project-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.project-architecture-section .project-section-title h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.project-architecture-section .project-section-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+}
+
+.project-architecture-section .project-section-icon svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* Batasi lebar flowchart agar kotak tidak melebar */
+.project-architecture-flow {
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-content: start;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.architecture-step {
+    position: relative;
+    min-width: 0;
+    min-height: 118px;
+    padding: 11px 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background: #fbfcff;
+    border: 1px solid #edf1f7;
+    border-radius: 11px;
+    box-shadow: 0 2px 6px rgba(40, 60, 95, 0.025);
+}
+
+.architecture-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 7px;
+    color: #6480ff;
+    background: #edf3ff;
+    border-radius: 9px;
+}
+
+.architecture-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.architecture-step h4 {
+    margin: 0 0 4px;
+    color: #283650;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.architecture-step p {
+    margin: 0;
+    color: #718099;
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.architecture-arrow {
+    position: absolute;
+    top: 17px;
+    right: -17px;
+    z-index: 2;
+    color: #6480ff;
+    font-size: 17px;
+    line-height: 1;
+}
+
+/* Tablet dan mobile */
+@media (max-width: 760px) {
+    .project-architecture-section {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .project-architecture-flow {
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .architecture-step {
+        min-height: 0;
+        display: grid;
+        grid-template-columns: 32px minmax(0, 1fr);
+        column-gap: 10px;
+        align-items: center;
+        padding: 9px 10px;
+        text-align: left;
+    }
+
+    .architecture-icon {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        margin: 0;
+    }
+
+    .architecture-step h4 {
+        grid-column: 2;
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .architecture-step p {
+        grid-column: 2;
+        font-size: 9px;
+    }
+
+    .architecture-arrow {
+        top: auto;
+        right: auto;
+        left: 20px;
+        bottom: -11px;
+        font-size: 11px;
+        transform: rotate(90deg);
+    }
+}
+
+/* Tampilan mobile */
+@media (max-width: 760px) {
+    .project-architecture-section {
+        padding: 12px;
+        margin: 14px 0;
+        border-radius: 12px;
+    }
+
+    .project-architecture-flow {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .architecture-step {
+        display: grid;
+        grid-template-columns: 32px minmax(0, 1fr);
+        column-gap: 10px;
+        align-items: center;
+        padding: 9px 10px;
+        text-align: left;
+    }
+
+    .architecture-icon {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        margin: 0;
+    }
+
+    .architecture-step h4 {
+        grid-column: 2;
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .architecture-step p {
+        grid-column: 2;
+        font-size: 9px;
+    }
+
+    .architecture-arrow {
+        top: auto;
+        right: auto;
+        left: 20px;
+        bottom: -11px;
+        font-size: 11px;
+        transform: rotate(90deg);
+    }
+}
+
+
+@media (max-width: 760px) {
+    .project-architecture-flow {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .architecture-arrow {
+        top: auto;
+        right: 50%;
+        bottom: -25px;
+        transform: translateX(50%) rotate(90deg);
+    }
+
+    .project-overview-card,
+    .project-architecture-section {
+        padding: 18px;
+    }
+}
+
+
+/* Perbaikan alignment Analysis Process */
+
+.project-architecture-section {
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    margin: 16px 0;
+    padding: 16px 18px;
+    background: #ffffff;
+    border: 1px solid #edf1f7;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(40, 60, 95, 0.035);
+}
+
+
+/* Grid mulai dari kiri, bukan di tengah */
+.project-architecture-flow {
+    width: 100%;
+    max-width: 900px;
+    margin: 0;
+    grid-template-columns: repeat(5, minmax(0, 130px));
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Posisi panah di tengah jarak antarkotak */
+.architecture-step {
+    overflow: visible;
+}
+
+.architecture-arrow {
+    top: 50px;
+    right: -38px;
+    width: 18px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1;
+    transform: none;
+    pointer-events: none;
+}
+
+/* Responsif */
+@media (max-width: 760px) {
+    .project-architecture-section {
+        margin: 14px 0;
+    }
+
+    .project-architecture-flow {
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .architecture-arrow {
+        top: auto;
+        right: auto;
+        left: 19px;
+        bottom: -11px;
+        width: auto;
+        transform: rotate(90deg);
+    }
+}
+
+
+/* Samakan centang Project Overview dengan Key Insights */
+.project-overview-list.project-feature-list {
+    display: grid;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.project-overview-list.project-feature-list li {
+    display: block;
+    padding-left: 23px;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.project-overview-list.project-feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #6c9cff;
+    border-radius: 50%;
+    color: #4c83ff;
+    background: transparent;
+    font-size: 10px;
+}
+
+/* Project Tools - Logo Styling */
+.project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-card .project-tools > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #edf0f5;
+    border-radius: 999px;
+
+    font-size: 10px;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+/* Logo tools pada project card */
+.project-card .project-tools .brand-icon {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
